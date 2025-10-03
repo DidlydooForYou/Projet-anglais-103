@@ -1,0 +1,14 @@
+.subject{
+    text-indent: 400px;
+    border-style: solid;
+    text-align:center;
+}
+
+.images{
+    width: 2000px;
+    height: 300px;
+}
+
+.text{
+    text-align:center;
+}

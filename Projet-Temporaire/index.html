@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Projet Anglais</title>
+  <style>
+    /* Reset */
+    body, ul {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    /* Header / Hero */
+    header {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+    header img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      filter: brightness(70%);
+    }
+    header h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2.5rem;
+      background: rgba(0,0,0,0.5);
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: #222;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 20px;
+      display: block;
+      transition: background 0.3s, color 0.3s;
+    }
+    nav ul li a:hover {
+      background-color: #0077cc;
+      border-radius: 5px;
+    }
+
+    /* Button */
+    #langue {
+      margin: 20px auto;
+      display: block;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      background: #0077cc;
+      color: white;
+      transition: background 0.3s;
+    }
+    #langue:hover {
+      background: #005fa3;
+    }
+
+    /* Main content */
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      color: #0077cc;
+    }
+    p {
+      text-align: justify;
+      font-size: 1.1rem;
+    }
+
+    .dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 130px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/swimming.jpg" alt="swimmer">
+    <h1>Projet Anglais</h1>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Intro</a></li>
+      <li><a href="projet-tech.html">Tech</a></li>
+      <li>
+        <a>
+            <select id="dropdown">
+                <option value="" hidden>Social</option>
+                <option value="projet-bio.html">Bio</option>
+                <option value="projet-events.html">Events</option>
+            </select>
+        </a>
+    </li>
+    </ul>
+  </nav>
+
+  <!-- Language Switch -->
+  <button id="langue">English</button>
+
+  <!-- Content -->
+  <main>
+    <section id="intro">
+      <h2>Intro</h2>
+      <p id="texte">
+        « Essentiellement, l’entrainement utilise peu de technologie et n’a pas changé drastiquement à travers le temps. En même temps, l’analyse de l’entrainement en natation est le secteur où le potentiel de haute technologie croît rapidement. » Todd Desorbo, entraineur en chef de l’université de Virginie (traduite). 
+
+        Êtes-vous un passionné du sport qui est à la recherche de votre prochain sport sortant de l’ordinaire? Qui sait? La natation pourrait être votre prochain passe-temps préféré! 
+
+        La natation est un sport où chaque détail compte, en partant de la composition du maillot de bain, jusqu’à la sensibilité des capteurs de touche, et même le positionnement des doigts à son importance. Pour les athlètes de tout niveau, comprendre comment toutes ces technologies fonctionnent est essentiel pour réussir à battre leurs records personnels, et parfois même pour battre des records au niveau international. Compte tenu de la montée en popularité que la natation connait depuis les quelques dernières années, ces technologies sont aussi essentielles pour les amateurs afin de rendre le sport plus accessible et plaisant. En effet, peu importe votre niveau, la natation est un sport où même le plus petit changement de technique fait une immense différence dans la performance. La natation n’est pas qu’un sport de haut niveau, c’est aussi un loisir et une compétence essentielle à la survie. La natation est une discipline complète qui n’entraine pas que le corps, mais aussi l’esprit en même temps. 
+
+        Enfilez votre maillot de bain et préparez-vous à plonger dans notre site et à nager dans notre monde!
+      </p>
+    </section>
+  </main>
+
+  <script>
+    let langue = document.querySelector("#langue");
+    let text = document.querySelector("#texte");
+
+    let francais = `« Essentiellement, l’entrainement utilise peu de technologie et n’a pas changé drastiquement à travers le temps. En même temps, l’analyse de l’entrainement en natation est le secteur où le potentiel de haute technologie croît rapidement. » Todd Desorbo, entraineur en chef de l’université de Virginie (traduite). 
+
+Êtes-vous un passionné du sport qui est à la recherche de votre prochain sport sortant de l’ordinaire? Qui sait? La natation pourrait être votre prochain passe-temps préféré! 
+
+La natation est un sport où chaque détail compte, en partant de la composition du maillot de bain, jusqu’à la sensibilité des capteurs de touche, et même le positionnement des doigts à son importance. Pour les athlètes de tout niveau, comprendre comment toutes ces technologies fonctionnent est essentiel pour réussir à battre leurs records personnels, et parfois même pour battre des records au niveau international. Compte tenu de la montée en popularité que la natation connait depuis les quelques dernières années, ces technologies sont aussi essentielles pour les amateurs afin de rendre le sport plus accessible et plaisant. En effet, peu importe votre niveau, la natation est un sport où même le plus petit changement de technique fait une immense différence dans la performance. La natation n’est pas qu’un sport de haut niveau, c’est aussi un loisir et une compétence essentielle à la survie. La natation est une discipline complète qui n’entraine pas que le corps, mais aussi l’esprit en même temps. 
+
+Enfilez votre maillot de bain et préparez-vous à plonger dans notre site et à nager dans notre monde!`;
+
+    let anglais = `"Essentially, training uses little technology and has not drastically changed over time. At the same time, the analysis of swim training is the area where high-tech potential is growing rapidly." — Todd Desorbo, head coach at the University of Virginia.  
+
+Are you a sports enthusiast looking for your next out-of-the-ordinary activity? Who knows? Swimming might just become your new favorite hobby!  
+
+Swimming is a sport where every detail matters, from the composition of the swimsuit, to the sensitivity of touchpads, and even the positioning of the fingers. For athletes of all levels, understanding how all these technologies work is essential to beating personal records, and sometimes even achieving world records. With the growing popularity of swimming in recent years, these technologies are also essential for amateurs, making the sport more accessible and enjoyable.  
+
+Indeed, no matter your level, swimming is a sport where even the smallest technical adjustment makes a huge difference in performance. Swimming is not only a high-level sport, but also a leisure activity and a life-saving skill. It is a complete discipline that trains not only the body but also the mind.  
+
+Put on your swimsuit, get ready to dive into our site, and swim through our world!`;
+
+    let enAnglais = false;
+
+    langue.addEventListener("click", function(){
+      if(enAnglais){
+        text.textContent = francais;
+        langue.textContent = "English";
+        enAnglais = false;
+      } else {
+        text.textContent = anglais;
+        langue.textContent = "Français";
+        enAnglais = true;
+      }
+    });
+
+    let dropdown = document.querySelector("#dropdown");
+
+    dropdown.addEventListener("change", function(){
+        let direction = this.value;
+        if(direction){
+            window.location.href = direction;
+        }
+    });
+  </script>
+</body>
+</html>
